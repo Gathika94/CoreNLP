@@ -522,46 +522,46 @@ public class SentimentCostAndGradient extends AbstractCachingDiffFunction {
           String posTag = wordTreeMap.get(word);
           switch(posTag){
             case "JJ":
-              wordVector = model.getWordVector("wrong");
+              wordVector = model.getWordVector("natural");
               break;
             case "JJR":
-              wordVector = model.getWordVector("worse");
+              wordVector = model.getWordVector("natural");
               break;
             case "JJS":
-              wordVector = model.getWordVector("worst");
+              wordVector = model.getWordVector("natural");
               break;
             case "NN":
-              wordVector = model.getWordVector("murder");
+              wordVector = model.getWordVector("thing");
               break;
             case "NNS":
-              wordVector = model.getWordVector("politics");
+              wordVector = model.getWordVector("things");
               break;
             case "RB":
-              wordVector = model.getWordVector("insufficiently");
+              wordVector = model.getWordVector("naturally");
               break;
             case "RBR":
-              wordVector = model.getWordVector("insufficiently");
+              wordVector = model.getWordVector("naturally");
               break;
             case "RBS":
-              wordVector = model.getWordVector("insufficiently");
+              wordVector = model.getWordVector("naturally");
               break;
             case "VB":
-              wordVector = model.getWordVector("ignore");
+              wordVector = model.getWordVector("drive");
               break;
             case "VBZ":
-              wordVector = model.getWordVector("ignores");
+              wordVector = model.getWordVector("drives");
               break;
             case "VBP":
-              wordVector = model.getWordVector("ignore");
+              wordVector = model.getWordVector("drive");
               break;
             case "VBD":
-              wordVector = model.getWordVector("ignored");
+              wordVector = model.getWordVector("walked");
               break;
             case "VBN":
-              wordVector = model.getWordVector("bad");
+              wordVector = model.getWordVector("driven");
               break;
             case "VBG":
-              wordVector = model.getWordVector("denying");
+              wordVector = model.getWordVector("walking");
               break;
             default:
               wordVector = model.getWordVector(word);

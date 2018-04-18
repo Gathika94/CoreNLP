@@ -29,8 +29,8 @@
       <file leaf-file-name="SentimentCostAndGradient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/stanford/nlp/sentiment/SentimentCostAndGradient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="519" column="33" lean-forward="true" selection-start-line="519" selection-start-column="33" selection-end-line="519" selection-end-column="33" />
+            <state relative-caret-position="126">
+              <caret line="597" column="20" lean-forward="true" selection-start-line="597" selection-start-column="20" selection-end-line="597" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1263#1264#0" expanded="true" />
@@ -272,12 +272,20 @@
       <workItem from="1523974983654" duration="594000" />
       <workItem from="1524026804902" duration="394000" />
       <workItem from="1524027739071" duration="5324000" />
-      <workItem from="1524041678699" duration="828000" />
+      <workItem from="1524041678699" duration="1984000" />
     </task>
+    <task id="LOCAL-00001" summary="&quot;just comment&quot;">
+      <created>1524042536942</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1524042536942</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23652000" />
+    <option name="totallyTimeSpent" value="24808000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="723" extended-state="6" />
@@ -316,6 +324,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;just comment&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;just comment&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -659,8 +671,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/stanford/nlp/sentiment/SentimentCostAndGradient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="519" column="33" lean-forward="true" selection-start-line="519" selection-start-column="33" selection-end-line="519" selection-end-column="33" />
+        <state relative-caret-position="126">
+          <caret line="597" column="20" lean-forward="true" selection-start-line="597" selection-start-column="20" selection-end-line="597" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1263#1264#0" expanded="true" />
