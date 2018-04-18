@@ -517,6 +517,7 @@ public class SentimentCostAndGradient extends AbstractCachingDiffFunction {
 
       if(nonNegativeList.contains(word)){
         //todo
+        //not working just copied
         if(wordTreeMap.containsKey(word)){
           String posTag = wordTreeMap.get(word);
           switch(posTag){
