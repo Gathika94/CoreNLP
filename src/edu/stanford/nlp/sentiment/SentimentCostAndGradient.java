@@ -1,7 +1,7 @@
 package edu.stanford.nlp.sentiment;
 
-import java.util.List;
-import java.util.Map;
+import java.io.IOException;
+import java.util.*;
 
 import org.ejml.simple.SimpleMatrix;
 
@@ -25,6 +25,19 @@ public class SentimentCostAndGradient extends AbstractCachingDiffFunction {
 
   private final SentimentModel model;
   private final List<Tree> trainingBatch;
+
+  public static TreeMap<String,String> wordTreeMap = null;
+  public static ArrayList<String> nonNegativeList = new ArrayList <>();
+  public static ArrayList<String> nonNeutralList = new ArrayList <>();
+
+
+  public static void createPosTagMap(){
+    wordTreeMap = new TreeMap <>();
+  }
+
+  public static void addPosTagsOfWords(String key, String posTag){
+    wordTreeMap.put(key,posTag);
+  }
 
   public SentimentCostAndGradient(SentimentModel model, List<Tree> trainingBatch) {
     this.model = model;
@@ -499,7 +512,123 @@ public class SentimentCostAndGradient extends AbstractCachingDiffFunction {
     } else if (tree.isPreTerminal()) {
       classification = model.getUnaryClassification(tree.label().value());
       String word = tree.children()[0].label().value();
-      SimpleMatrix wordVector = model.getWordVector(word);
+      SimpleMatrix wordVector = null;
+
+
+      if(nonNegativeList.contains(word)){
+        //todo
+        if(wordTreeMap.containsKey(word)){
+          String posTag = wordTreeMap.get(word);
+          switch(posTag){
+            case "JJ":
+              wordVector = model.getWordVector("wrong");
+              break;
+            case "JJR":
+              wordVector = model.getWordVector("worse");
+              break;
+            case "JJS":
+              wordVector = model.getWordVector("worst");
+              break;
+            case "NN":
+              wordVector = model.getWordVector("murder");
+              break;
+            case "NNS":
+              wordVector = model.getWordVector("politics");
+              break;
+            case "RB":
+              wordVector = model.getWordVector("insufficiently");
+              break;
+            case "RBR":
+              wordVector = model.getWordVector("insufficiently");
+              break;
+            case "RBS":
+              wordVector = model.getWordVector("insufficiently");
+              break;
+            case "VB":
+              wordVector = model.getWordVector("ignore");
+              break;
+            case "VBZ":
+              wordVector = model.getWordVector("ignores");
+              break;
+            case "VBP":
+              wordVector = model.getWordVector("ignore");
+              break;
+            case "VBD":
+              wordVector = model.getWordVector("ignored");
+              break;
+            case "VBN":
+              wordVector = model.getWordVector("bad");
+              break;
+            case "VBG":
+              wordVector = model.getWordVector("denying");
+              break;
+            default:
+              wordVector = model.getWordVector(word);
+              break;
+          }
+        }
+        wordVector = model.getWordVector(word);
+      }else if(nonNeutralList.contains(word)){
+        //todo
+        //for every pos tag needs find out appropriate neutral word to generate word vector
+        if(wordTreeMap.containsKey(word)) {
+          String posTag = wordTreeMap.get(word);
+          switch (posTag) {
+            case "JJ":
+              wordVector = model.getWordVector("wrong");
+              break;
+            case "JJR":
+              wordVector = model.getWordVector("worse");
+              break;
+            case "JJS":
+              wordVector = model.getWordVector("worst");
+              break;
+            case "NN":
+              wordVector = model.getWordVector("murder");
+              break;
+            case "NNS":
+              wordVector = model.getWordVector("politics");
+              break;
+            case "RB":
+              wordVector = model.getWordVector("insufficiently");
+              break;
+            case "RBR":
+              wordVector = model.getWordVector("insufficiently");
+              break;
+            case "RBS":
+              wordVector = model.getWordVector("insufficiently");
+              break;
+            case "VB":
+              wordVector = model.getWordVector("ignore");
+              break;
+            case "VBZ":
+              wordVector = model.getWordVector("ignores");
+              break;
+            case "VBP":
+              wordVector = model.getWordVector("ignore");
+              break;
+            case "VBD":
+              wordVector = model.getWordVector("ignored");
+              break;
+            case "VBN":
+              wordVector = model.getWordVector("bad");
+              break;
+            case "VBG":
+              wordVector = model.getWordVector("denying");
+              break;
+            default:
+              wordVector = model.getWordVector(word);
+              break;
+          }
+        }
+        else{
+          wordVector = model.getWordVector(word);
+        }
+
+      }else{
+        wordVector = model.getWordVector(word);
+      }
+
       nodeVector = NeuralUtils.elementwiseApplyTanh(wordVector);
     } else if (tree.children().length == 1) {
       log.info("SentimentCostAndGradient: warning: Non-preterminal nodes of size 1: " + tree);
