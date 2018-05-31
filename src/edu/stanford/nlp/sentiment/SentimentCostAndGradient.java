@@ -514,7 +514,6 @@ public class SentimentCostAndGradient extends AbstractCachingDiffFunction {
       String word = tree.children()[0].label().value();
       SimpleMatrix wordVector = null;
 
-
       if(nonNegativeList.contains(word)){
         //todo
         //not working just copied
@@ -568,7 +567,10 @@ public class SentimentCostAndGradient extends AbstractCachingDiffFunction {
               break;
           }
         }
-        wordVector = model.getWordVector(word);
+        else{
+          wordVector = model.getWordVector(word);
+        }
+
       }else if(nonNeutralList.contains(word)){
         //todo
         //for every pos tag needs find out appropriate neutral word to generate word vector
