@@ -63,8 +63,8 @@ edu/stanford/nlp/ie/pascal/ISODateInstanceTest.class
 edu/stanford/nlp/time/DurationTest.class
 edu/stanford/nlp/trees/GrammaticalStructureTest.class
 edu/stanford/nlp/util/ArrayMapTest.class
-edu/stanford/nlp/pipeline/CoNLLOutputterTest.class
 edu/stanford/nlp/loglinear/inference/CliqueTreeTest$GraphicalModelGenerator.class
+edu/stanford/nlp/pipeline/CoNLLOutputterTest.class
 edu/stanford/nlp/loglinear/model/NDArrayTest$NDArrayGenerator.class
 edu/stanford/nlp/trees/tregex/TregexTest$1.class
 edu/stanford/nlp/parser/lexparser/SpanishUnknownWordModelTest.class
@@ -85,15 +85,15 @@ edu/stanford/nlp/ling/tokensregex/PhraseTableTest.class
 edu/stanford/nlp/loglinear/learning/LogLikelihoodFunctionTest$GraphicalModelDatasetGenerator.class
 edu/stanford/nlp/util/MetaClassTest$ISomething.class
 edu/stanford/nlp/util/MapsTest.class
-edu/stanford/nlp/wordseg/ChineseStringUtilsTest.class
 edu/stanford/nlp/util/ArgumentParserTest$MixedClass.class
+edu/stanford/nlp/wordseg/ChineseStringUtilsTest.class
 edu/stanford/nlp/naturalli/OperatorTest.class
 edu/stanford/nlp/util/MetaClassTest$SubSSomething.class
 edu/stanford/nlp/trees/PennTreeReaderTest.class
 edu/stanford/nlp/util/MetaClassTest$SomethingWrapper.class
 edu/stanford/nlp/classify/GeneralDatasetTest.class
-edu/stanford/nlp/pipeline/AnnotatorPoolTest.class
 edu/stanford/nlp/pipeline/AnnotatorPoolTest$SampleAnnotatorFactory$1.class
+edu/stanford/nlp/pipeline/AnnotatorPoolTest.class
 edu/stanford/nlp/util/CoreMapTest$StringB.class
 edu/stanford/nlp/process/DocumentPreprocessorTest.class
 edu/stanford/nlp/trees/EnglishGrammaticalStructureTest.class
@@ -120,8 +120,8 @@ edu/stanford/nlp/loglinear/inference/CliqueTreeTest$WeightsGenerator.class
 edu/stanford/nlp/naturalli/OpenIETest$4.class
 edu/stanford/nlp/trees/ModCollinsHeadFinderTest.class
 edu/stanford/nlp/patterns/surface/SurfacePatternTest.class
-edu/stanford/nlp/loglinear/model/ConcatVectorNamespaceTest.class
 edu/stanford/nlp/benchmarks/Benchmarks.class
+edu/stanford/nlp/loglinear/model/ConcatVectorNamespaceTest.class
 edu/stanford/nlp/util/MetaClassTest$ManyConstructors.class
 edu/stanford/nlp/util/IterableIteratorTest.class
 edu/stanford/nlp/trees/TreeTest.class
@@ -145,8 +145,8 @@ edu/stanford/nlp/trees/tregex/tsurgeon/RelabelNodeTest.class
 edu/stanford/nlp/util/concurrent/ConcurrentHashCounterTest.class
 edu/stanford/nlp/naturalli/OpenIETest$2.class
 edu/stanford/nlp/objectbank/DelimitRegExIteratorTest.class
-edu/stanford/nlp/util/CoreMapTest$StringA.class
 edu/stanford/nlp/util/BeamTest.class
+edu/stanford/nlp/util/CoreMapTest$StringA.class
 edu/stanford/nlp/util/MetaClassTest$Something.class
 edu/stanford/nlp/util/concurrent/ConcurrentHashIndexTest.class
 edu/stanford/nlp/util/CollectionUtilsTest$10.class
@@ -170,8 +170,8 @@ edu/stanford/nlp/naturalli/OpenIETest.class
 edu/stanford/nlp/util/CoreMapTest$IntegerA.class
 edu/stanford/nlp/time/SUTimeTest.class
 edu/stanford/nlp/tagger/io/TSVTaggedFileReaderTest.class
-edu/stanford/nlp/semgraph/semgrex/SemgrexPatternTest.class
 edu/stanford/nlp/parser/shiftreduce/ShiftTransitionTest.class
+edu/stanford/nlp/semgraph/semgrex/SemgrexPatternTest.class
 edu/stanford/nlp/naturalli/PolarityTest$3.class
 edu/stanford/nlp/util/IntervalTreeTest.class
 edu/stanford/nlp/loglinear/inference/TableFactorTest.class
@@ -193,8 +193,8 @@ edu/stanford/nlp/process/TransformXMLTest.class
 edu/stanford/nlp/util/FileBackedCacheTest.class
 edu/stanford/nlp/stats/TwoDimensionalCounterTest.class
 edu/stanford/nlp/trees/UniversalEnglishGrammaticalStructureTest$1.class
-edu/stanford/nlp/sequences/KBestSequenceFinderTest.class
 edu/stanford/nlp/naturalli/OpenIETest$1.class
+edu/stanford/nlp/sequences/KBestSequenceFinderTest.class
 edu/stanford/nlp/naturalli/PolarityTest$4.class
 edu/stanford/nlp/loglinear/learning/OptimizerTests.class
 edu/stanford/nlp/util/MetaClassTest$Pointer.class
@@ -265,8 +265,8 @@ edu/stanford/nlp/process/WordShapeClassifierTest.class
 edu/stanford/nlp/util/FileBackedCacheTest$1.class
 edu/stanford/nlp/loglinear/storage/ModelBatchTest.class
 edu/stanford/nlp/naturalli/RelationTripleSegmenterTest$1.class
-edu/stanford/nlp/util/TreeShapedStackTest.class
 edu/stanford/nlp/util/TimingTest.class
+edu/stanford/nlp/util/TreeShapedStackTest.class
 edu/stanford/nlp/sequences/ObjectBankWrapperTest.class
 edu/stanford/nlp/trees/TreebankLanguagePackTest.class
 edu/stanford/nlp/trees/tregex/TregexTest$TreeTestExample.class
