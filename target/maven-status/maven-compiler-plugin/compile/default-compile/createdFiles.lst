@@ -342,8 +342,8 @@ edu/stanford/nlp/parser/lexparser/FrenchTreebankParserParams$AnnotatePunctuation
 edu/stanford/nlp/trees/tregex/gui/InputPanel$TregexGUITableModel.class
 edu/stanford/nlp/trees/tregex/tsurgeon/TsurgeonPatternRoot.class
 edu/stanford/nlp/tagger/maxent/ExtractorFrames$ExtractorTwoWords.class
-edu/stanford/nlp/trees/tregex/tsurgeon/DeleteNode.class
 edu/stanford/nlp/trees/Span$1.class
+edu/stanford/nlp/trees/tregex/tsurgeon/DeleteNode.class
 edu/stanford/nlp/pipeline/StanfordCoreNLPServer$1.class
 edu/stanford/nlp/coref/hybrid/sieve/PronounMatch.class
 edu/stanford/nlp/trees/TransformingTreebank$MyTreeTransformer3.class
@@ -454,8 +454,8 @@ edu/stanford/nlp/time/HeidelTimeKBPAnnotator$1.class
 edu/stanford/nlp/ie/crf/TestSequenceModel.class
 edu/stanford/nlp/trees/tregex/tsurgeon/AdjoinToFootNode$Matcher.class
 edu/stanford/nlp/loglinear/model/proto/GraphicalModelProto$GraphicalModel$1.class
-edu/stanford/nlp/pipeline/AnnotationCreator.class
 edu/stanford/nlp/pipeline/JSONOutputter.class
+edu/stanford/nlp/pipeline/AnnotationCreator.class
 edu/stanford/nlp/naturalli/ClauseSplitterSearchProblem$6.class
 edu/stanford/nlp/patterns/PhraseScorer.class
 edu/stanford/nlp/sequences/TrueCasingForNISTDocumentReaderAndWriter$LineToTrueCasesParser.class
@@ -1195,8 +1195,8 @@ edu/stanford/nlp/tagger/maxent/AmbiguityClasses.class
 edu/stanford/nlp/pipeline/CoreNLPProtos$IndexedWord.class
 edu/stanford/nlp/ling/CoreAnnotations$NumericCompositeTypeAnnotation.class
 edu/stanford/nlp/semgraph/semgrex/SimpleCharStream.class
-edu/stanford/nlp/trees/tregex/DescriptionPattern$1.class
 edu/stanford/nlp/trees/Tree$TreeIterator.class
+edu/stanford/nlp/trees/tregex/DescriptionPattern$1.class
 edu/stanford/nlp/parser/lexparser/MLEDependencyGrammar$EndHead.class
 edu/stanford/nlp/objectbank/IteratorFromReaderFactory.class
 edu/stanford/nlp/coref/hybrid/sieve/ChineseHeadMatch.class
@@ -1389,8 +1389,8 @@ edu/stanford/nlp/trees/tregex/tsurgeon/RelabelNode$RelabelMatcher.class
 edu/stanford/nlp/patterns/TextAnnotationPatterns.class
 edu/stanford/nlp/time/SUTime$Range.class
 edu/stanford/nlp/ie/machinereading/structure/RelationMention.class
-edu/stanford/nlp/trees/international/arabic/ArabicTreebankLanguagePack.class
 edu/stanford/nlp/trees/DateTreeTransformer.class
+edu/stanford/nlp/trees/international/arabic/ArabicTreebankLanguagePack.class
 edu/stanford/nlp/ling/tokensregex/types/ValueFunctions$8.class
 edu/stanford/nlp/sequences/MUCDocumentReaderAndWriter$MUCDocumentParser.class
 edu/stanford/nlp/simple/FrenchSentence.class
@@ -2395,8 +2395,8 @@ edu/stanford/nlp/ie/EmpiricalNERPriorBIOFactory.class
 edu/stanford/nlp/parser/lexparser/EnglishTreebankParserParams$EnglishTest.class
 edu/stanford/nlp/time/TimeFormatter$ApplyActionWrapper.class
 edu/stanford/nlp/tagger/maxent/TaggerFeature.class
-edu/stanford/nlp/trees/LabeledScoredConstituentFactory.class
 edu/stanford/nlp/trees/GraphLessGrammaticalStructure.class
+edu/stanford/nlp/trees/LabeledScoredConstituentFactory.class
 edu/stanford/nlp/coref/statistical/MaxMarginMentionRanker$Builder.class
 edu/stanford/nlp/coref/statistical/PairwiseModel.class
 edu/stanford/nlp/parser/eval/TreebankStats.class
@@ -2556,8 +2556,8 @@ edu/stanford/nlp/parser/nndep/Classifier.class
 edu/stanford/nlp/coref/hybrid/sieve/DcorefSieveOptions.class
 edu/stanford/nlp/ling/tokensregex/NodePatternTransformer.class
 edu/stanford/nlp/ling/tokensregex/types/ValueFunctions$31.class
-edu/stanford/nlp/util/DataFilePaths.class
 edu/stanford/nlp/util/RegexStringFilter.class
+edu/stanford/nlp/util/DataFilePaths.class
 edu/stanford/nlp/ling/tokensregex/CoreMapNodePatternTrigger$StringTriggerCandidate.class
 edu/stanford/nlp/ie/demo/NERDemo.class
 edu/stanford/nlp/trees/GrammaticalStructureFactory.class
@@ -2578,8 +2578,8 @@ edu/stanford/nlp/ling/tokensregex/demo/MyAnnotations$MyTokensAnnotation.class
 edu/stanford/nlp/optimization/QNMinimizer$SurpriseConvergence.class
 edu/stanford/nlp/util/IntQuadruple.class
 edu/stanford/nlp/dcoref/CorefCoreAnnotations$CorefDestAnnotation.class
-edu/stanford/nlp/parser/lexparser/AbstractTreebankParserParams$RemoveGFSubcategoryStripper.class
 edu/stanford/nlp/parser/lexparser/Options$LexOptions.class
+edu/stanford/nlp/parser/lexparser/AbstractTreebankParserParams$RemoveGFSubcategoryStripper.class
 edu/stanford/nlp/semgraph/semgrex/ssurgeon/Ssurgeon.class
 edu/stanford/nlp/optimization/HasFloatInitial.class
 edu/stanford/nlp/trees/UnnamedDependency$1.class
@@ -2635,8 +2635,8 @@ edu/stanford/nlp/patterns/surface/PatternsForEachTokenLucene.class
 edu/stanford/nlp/tagger/maxent/TTags.class
 edu/stanford/nlp/loglinear/model/proto/ConcatVectorProto$ConcatVector$Builder.class
 edu/stanford/nlp/trees/international/hebrew/HebrewTreebankLanguagePack.class
-edu/stanford/nlp/trees/international/spanish/SpanishTreeNormalizer.class
 edu/stanford/nlp/trees/EnglishPatterns.class
+edu/stanford/nlp/trees/international/spanish/SpanishTreeNormalizer.class
 edu/stanford/nlp/parser/metrics/EvaluationMetric.class
 edu/stanford/nlp/parser/metrics/TaggingEval.class
 edu/stanford/nlp/parser/lexparser/FrenchTreebankParserParams$AddPOSSequenceFunction.class
@@ -3341,8 +3341,8 @@ edu/stanford/nlp/util/MetaClass$1.class
 edu/stanford/nlp/classify/SVMLightClassifierFactory.class
 edu/stanford/nlp/ling/CoreAnnotations$CoNLLDepTypeAnnotation.class
 edu/stanford/nlp/classify/LinearClassifier.class
-edu/stanford/nlp/trees/tregex/gui/InputPanel$HistoryEntry.class
 edu/stanford/nlp/trees/EnglishGrammaticalStructure.class
+edu/stanford/nlp/trees/tregex/gui/InputPanel$HistoryEntry.class
 edu/stanford/nlp/naturalli/Polarity.class
 edu/stanford/nlp/tagger/maxent/ExtractorWordShapeConjunction.class
 edu/stanford/nlp/util/FiveDimensionalMap.class
@@ -3562,8 +3562,8 @@ edu/stanford/nlp/naturalli/Operator.class
 edu/stanford/nlp/international/spanish/process/SpanishTokenizer$SpanishTokenizerFactory.class
 edu/stanford/nlp/neural/rnn/RNNCoreAnnotations$GoldClass.class
 edu/stanford/nlp/util/logging/LogFilter$ContainsMessage.class
-edu/stanford/nlp/time/GenericTimeExpressionPatterns$4.class
 edu/stanford/nlp/time/SUTime$StandardTemporalType$4.class
+edu/stanford/nlp/time/GenericTimeExpressionPatterns$4.class
 edu/stanford/nlp/time/ParsedGigawordReader$1.class
 edu/stanford/nlp/trees/TreeVisitor.class
 edu/stanford/nlp/trees/tregex/gui/TregexGUI$1.class
@@ -3571,8 +3571,8 @@ edu/stanford/nlp/international/arabic/pipeline/LDCPosMapper.class
 edu/stanford/nlp/patterns/ScorePhrasesLearnFeatWt$PhrasePair.class
 edu/stanford/nlp/patterns/SentenceIndex.class
 edu/stanford/nlp/parser/lexparser/ChineseMaxentLexicon.class
-edu/stanford/nlp/util/Beam.class
 edu/stanford/nlp/util/XMLUtils$SAXErrorHandler.class
+edu/stanford/nlp/util/Beam.class
 edu/stanford/nlp/trees/international/negra/NegraPennTreeNormalizer.class
 edu/stanford/nlp/ling/tokensregex/NodePattern$DisjNodePattern.class
 edu/stanford/nlp/ie/pascal/CliqueTemplates.class

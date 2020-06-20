@@ -1,6 +1,5 @@
 package edu.stanford.nlp.sentiment;
 
-import java.io.IOException;
 import java.util.*;
 
 import org.ejml.simple.SimpleMatrix;
@@ -27,12 +26,15 @@ public class SentimentCostAndGradient extends AbstractCachingDiffFunction {
     private final List<Tree> trainingBatch;
 
     public static TreeMap<String, String> wordTreeMap = null;
-    public static ArrayList<String> nonNegativeList = new ArrayList<>();
-    public static ArrayList<String> nonNegativePosList = new ArrayList<>();
-    public static ArrayList<String> nonNegativeImpactWordList = new ArrayList<>();
-    public static ArrayList<String> nonNeutralList = new ArrayList<>();
-    public static ArrayList<String> nonNeutralPosList = new ArrayList<>();
-    public static ArrayList<String> nonNeutralImpactWordList = new ArrayList<>();
+    public static ArrayList<String> deviatedNegativeList = new ArrayList<>();
+    public static ArrayList<String> deviatedNegativePosList = new ArrayList<>();
+    public static ArrayList<String> deviatedNegativeImpactWordList = new ArrayList<>();
+    public static ArrayList<String> deviatedNeutralList = new ArrayList<>();
+    public static ArrayList<String> deviatedNeutralPosList = new ArrayList<>();
+    public static ArrayList<String> deviatedNeutralImpactWordList = new ArrayList<>();
+    public static ArrayList<String> deviatedPositiveList = new ArrayList<>();
+    public static ArrayList<String> deviatedPositivePosList = new ArrayList<>();
+    public static ArrayList<String> deviatedPositiveImpactWordList = new ArrayList<>();
 
 
     public static void createPosTagMap() {
@@ -547,131 +549,208 @@ public class SentimentCostAndGradient extends AbstractCachingDiffFunction {
             String word = tree.children()[0].label().value();
             SimpleMatrix wordVector = null;
 
-            if (nonNegativeList.contains(word)) {
+            if (deviatedNeutralList.contains(word)) {
                 //todo
                 //not working just copied
+
                 if (wordTreeMap.containsKey(word)) {
                     String posTag = wordTreeMap.get(word);
-                    Integer deviatedWordIndex = nonNegativeList.indexOf(word);
-                    String posOfImpactWord = nonNegativePosList.get(deviatedWordIndex);
-                    String impactWord = nonNegativeImpactWordList.get(deviatedWordIndex);
+                    Integer deviatedWordIndex = deviatedNeutralList.indexOf(word);
+                    String posOfImpactWord = deviatedNeutralPosList.get(deviatedWordIndex);
+                    String impactWord = deviatedNeutralImpactWordList.get(deviatedWordIndex);
 
-                    if (posTag.equals(posOfImpactWord)) {
+                   /* if (posTag.equals(posOfImpactWord)) {
                         wordVector = model.getWordVector(impactWord);
                         System.out.println("impact_word :"+impactWord);
+                        log.info("impact_word :"+impactWord);
                     } else {
-                        switch (posTag) {
-                            case "JJ":
-                                wordVector = model.getWordVector("natural");
-                                break;
-                            case "JJR":
-                                wordVector = model.getWordVector("natural");
-                                break;
-                            case "JJS":
-                                wordVector = model.getWordVector("natural");
-                                break;
-                            case "NN":
-                                wordVector = model.getWordVector("thing");
-                                break;
-                            case "NNS":
-                                wordVector = model.getWordVector("things");
-                                break;
-                            case "RB":
-                                wordVector = model.getWordVector("naturally");
-                                break;
-                            case "RBR":
-                                wordVector = model.getWordVector("naturally");
-                                break;
-                            case "RBS":
-                                wordVector = model.getWordVector("naturally");
-                                break;
-                            case "VB":
-                                wordVector = model.getWordVector("drive");
-                                break;
-                            case "VBZ":
-                                wordVector = model.getWordVector("drives");
-                                break;
-                            case "VBP":
-                                wordVector = model.getWordVector("drive");
-                                break;
-                            case "VBD":
-                                wordVector = model.getWordVector("walked");
-                                break;
-                            case "VBN":
-                                wordVector = model.getWordVector("driven");
-                                break;
-                            case "VBG":
-                                wordVector = model.getWordVector("walking");
-                                break;
-                            default:
-                                wordVector = model.getWordVector(word);
-                                break;
-                        }
+
+                    }*/
+                    log.info("changed");
+                    switch (posTag) {
+                        case "JJ":
+                            wordVector = model.getWordVector("natural");
+                            break;
+                        case "JJR":
+                            wordVector = model.getWordVector("natural");
+                            break;
+                        case "JJS":
+                            wordVector = model.getWordVector("natural");
+                            break;
+                        case "NN":
+                            wordVector = model.getWordVector("thing");
+                            break;
+                        case "NNS":
+                            wordVector = model.getWordVector("things");
+                            break;
+                        case "RB":
+                            wordVector = model.getWordVector("naturally");
+                            break;
+                        case "RBR":
+                            wordVector = model.getWordVector("naturally");
+                            break;
+                        case "RBS":
+                            wordVector = model.getWordVector("naturally");
+                            break;
+                        case "VB":
+                            wordVector = model.getWordVector("drive");
+                            break;
+                        case "VBZ":
+                            wordVector = model.getWordVector("drives");
+                            break;
+                        case "VBP":
+                            wordVector = model.getWordVector("drive");
+                            break;
+                        case "VBD":
+                            wordVector = model.getWordVector("walked");
+                            break;
+                        case "VBN":
+                            wordVector = model.getWordVector("driven");
+                            break;
+                        case "VBG":
+                            wordVector = model.getWordVector("walking");
+                            break;
+                        default:
+                            wordVector = model.getWordVector(impactWord);
+                            break;
                     }
 
                 } else {
                     wordVector = model.getWordVector(word);
                 }
 
-            } else if (nonNeutralList.contains(word)) {
+            } else if (deviatedNegativeList.contains(word)) {
                 //todo
                 //for every pos tag needs find out appropriate neutral word to generate word vector
                 if (wordTreeMap.containsKey(word)) {
                     String posTag = wordTreeMap.get(word);
-                    Integer deviatedWordIndex = nonNeutralList.indexOf(word);
-                    String posOfImpactWord = nonNeutralPosList.get(deviatedWordIndex);
-                    String impactWord = nonNeutralImpactWordList.get(deviatedWordIndex);
-                    if (posTag.equals(posOfImpactWord)) {
+                    Integer deviatedWordIndex = deviatedNegativeList.indexOf(word);
+                    String posOfImpactWord = deviatedNegativePosList.get(deviatedWordIndex);
+                    String impactWord = deviatedNegativeImpactWordList.get(deviatedWordIndex);
+
+                    /*if (posTag.equals(posOfImpactWord)) {
                         wordVector = model.getWordVector(impactWord);
                         System.out.println("impact_word :"+impactWord);
+                        log.info("impact_word :"+impactWord);
                     } else {
-                        switch (posTag) {
-                            case "JJ":
-                                wordVector = model.getWordVector("wrong");
-                                break;
-                            case "JJR":
-                                wordVector = model.getWordVector("worse");
-                                break;
-                            case "JJS":
-                                wordVector = model.getWordVector("worst");
-                                break;
-                            case "NN":
-                                wordVector = model.getWordVector("murder");
-                                break;
-                            case "NNS":
-                                wordVector = model.getWordVector("politics");
-                                break;
-                            case "RB":
-                                wordVector = model.getWordVector("insufficiently");
-                                break;
-                            case "RBR":
-                                wordVector = model.getWordVector("insufficiently");
-                                break;
-                            case "RBS":
-                                wordVector = model.getWordVector("insufficiently");
-                                break;
-                            case "VB":
-                                wordVector = model.getWordVector("ignore");
-                                break;
-                            case "VBZ":
-                                wordVector = model.getWordVector("ignores");
-                                break;
-                            case "VBP":
-                                wordVector = model.getWordVector("ignore");
-                                break;
-                            case "VBD":
-                                wordVector = model.getWordVector("ignored");
-                                break;
-                            case "VBN":
-                                wordVector = model.getWordVector("bad");
-                                break;
-                            case "VBG":
-                                wordVector = model.getWordVector("denying");
-                                break;
-                            default:
-                                wordVector = model.getWordVector(word);
-                                break;
-                        }
+
+                    }*/
+                    log.info("changed");
+                    switch (posTag) {
+                        case "JJ":
+                            wordVector = model.getWordVector("wrong");
+                            break;
+                        case "JJR":
+                            wordVector = model.getWordVector("worse");
+                            break;
+                        case "JJS":
+                            wordVector = model.getWordVector("worst");
+                            break;
+                        case "NN":
+                            wordVector = model.getWordVector("murder");
+                            break;
+                        case "NNS":
+                            wordVector = model.getWordVector("politics");
+                            break;
+                        case "RB":
+                            wordVector = model.getWordVector("insufficiently");
+                            break;
+                        case "RBR":
+                            wordVector = model.getWordVector("insufficiently");
+                            break;
+                        case "RBS":
+                            wordVector = model.getWordVector("insufficiently");
+                            break;
+                        case "VB":
+                            wordVector = model.getWordVector("ignore");
+                            break;
+                        case "VBZ":
+                            wordVector = model.getWordVector("ignores");
+                            break;
+                        case "VBP":
+                            wordVector = model.getWordVector("ignore");
+                            break;
+                        case "VBD":
+                            wordVector = model.getWordVector("ignored");
+                            break;
+                        case "VBN":
+                            wordVector = model.getWordVector("bad");
+                            break;
+                        case "VBG":
+                            wordVector = model.getWordVector("denying");
+                            break;
+                        default:
+                            wordVector = model.getWordVector(impactWord);
+                            break;
+                    }
+
+                } else {
+                    wordVector = model.getWordVector(word);
+                }
+
+            }else if(deviatedPositiveList.contains(word)){
+                //todo
+                //for every pos tag needs find out appropriate neutral word to generate word vector
+                if (wordTreeMap.containsKey(word)) {
+                    String posTag = wordTreeMap.get(word);
+                    Integer deviatedWordIndex = deviatedPositiveList.indexOf(word);
+                    String posOfImpactWord = deviatedPositivePosList.get(deviatedWordIndex);
+                    String impactWord = deviatedPositiveImpactWordList.get(deviatedWordIndex);
+                   /* if (posTag.equals(posOfImpactWord)) {
+                        wordVector = model.getWordVector(impactWord);
+                        System.out.println("impact_word :"+impactWord);
+                        log.info("impact_word :"+impactWord);
+                    } else {
+
+                    }*/
+                    log.info("changed");
+                    switch (posTag) {
+                        case "JJ":
+                            wordVector = model.getWordVector("beautiful");
+                            break;
+                        case "JJR":
+                            wordVector = model.getWordVector("better");
+                            break;
+                        case "JJS":
+                            wordVector = model.getWordVector("best");
+                            break;
+                        case "NN":
+                            wordVector = model.getWordVector("masterpiece");
+                            break;
+                        case "NNS":
+                            wordVector = model.getWordVector("masterpieces");
+                            break;
+                        case "RB":
+                            wordVector = model.getWordVector("beautifully");
+                            break;
+                        case "RBR":
+                            wordVector = model.getWordVector("beautifully");
+                            break;
+                        case "RBS":
+                            wordVector = model.getWordVector("beautifully");
+                            break;
+                        case "VB":
+                            wordVector = model.getWordVector("reward");
+                            break;
+                        case "VBZ":
+                            wordVector = model.getWordVector("appreciates");
+                            break;
+                        case "VBP":
+                            wordVector = model.getWordVector("reward");
+                            break;
+                        case "VBD":
+                            wordVector = model.getWordVector("won");
+                            break;
+                        case "VBN":
+                            wordVector = model.getWordVector("won");
+                            break;
+                        case "VBG":
+                            wordVector = model.getWordVector("pleasing");
+                            break;
+                        default:
+                            //changed the default to impact word
+                            wordVector = model.getWordVector(impactWord);
+                            break;
                     }
 
                 } else {
